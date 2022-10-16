@@ -34,7 +34,7 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
     lienzo.shadowOffsetX = 50;
     lienzo.shadowOffsetY = 50;
 
-    lienzo.lineWidth = .1;
+    lienzo.lineWidth = 1;
     lienzo.moveTo(xinicial, yinicial);
     lienzo.lineTo(xfinal, yfinal);
     lienzo.stroke();
