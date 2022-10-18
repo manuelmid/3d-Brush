@@ -30,11 +30,11 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
     lienzo.strokeStyle = color;
 
     lienzo.shadowColor = 'rgba(6, 151, 214, 1)';
-    lienzo.shadowBlur = 1;
+    lienzo.shadowBlur = 2;
     lienzo.shadowOffsetX = 40;
     lienzo.shadowOffsetY = 40;
 
-    lienzo.lineWidth = 2;
+    lienzo.lineWidth = 1;
     lienzo.moveTo(xinicial, yinicial);
     lienzo.lineTo(xfinal, yfinal);
     lienzo.stroke();
