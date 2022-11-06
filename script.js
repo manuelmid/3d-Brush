@@ -5,22 +5,13 @@ let teclas = {
     LEFT:   37
 };
 
-//document.addEventListener("keydown", dibujar);
-document.addEventListener("mousedown", empezarDibujo);
-document.addEventListener("mouseup", empezarDibujo);
-document.addEventListener("mousemove", dibujar);
-
-
-
 let canva = document.getElementById("canva");
 let papel = canva.getContext("2d");
 let x;
 let y;
-let colorsito = "rgba(9,9,121,1)";
-
-
-
-//dibujarLinea("blue", 199, 199, 201, 201, papel);
+let xinicial = 0;
+let colorsito = "yellow";
+let boton = document.getElementById("boton");
 
 function track(){console.log("")};
 
@@ -29,12 +20,11 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
     lienzo.beginPath();
     lienzo.strokeStyle = color;
 
-    lienzo.shadowColor = 'rgba(6, 151, 214, 1)';
-    lienzo.shadowBlur = 2;
-    lienzo.shadowOffsetX = 40;
-    lienzo.shadowOffsetY = 40;
-
-    lienzo.lineWidth = 1;
+    lienzo.shadowColor = 'black';
+    lienzo.shadowBlur    = 2;
+    lienzo.shadowOffsetX = 2;
+    lienzo.shadowOffsetY = 2;
+    lienzo.lineWidth     = 30;//20
     lienzo.moveTo(xinicial, yinicial);
     lienzo.lineTo(xfinal, yfinal);
     lienzo.stroke();
@@ -46,42 +36,54 @@ function empezarDibujo(evento){
 
     if(evento.type == "mousedown"){
         dibujar = true;
-        console.log(dibujar)
+        console.log(evento)
     }
     if(evento.type == "mouseup"){
-        dibujar == false;
-        console.log(dibujar)
-    }  
+       // dibujar == false;
+        console.log("ff")
+    }else{console.log("jk")}
 
 }
 
 function dibujar(evento){
-            
+
+
     x = evento.layerX;
     y = evento.layerY;
-    console.log(x,y);
+   // console.log(x,y);
     //dibujarLinea(colorsito, x,y, x-55,y-52, papel);       
     //dibujarLinea(colorsito, x,y, x+15,y+12, papel);    
     
     if(dibujar == true){
-        dibujarLinea(colorsito, x,y, x+2,y+30, papel);
+        dibujarLinea(colorsito, x,y, x+1,y+y, papel);
+        console.log(x,y);
     };
-    
+
+};
+
+function moving(){
+    console.log("hi");
 }
 
-
-
-  
-
-
-
-
+ 
 
 function Stopdibujar(evento){
-
         x = evento.layerX;
         y = evento.layerY;
 };
+
+function botonAction(){
+    document.body.style.backgroundColor = "black";
+}
+
+
+//document.addEventListener("keydown", dibujar);
+document.addEventListener("mousedown", empezarDibujo);
+document.addEventListener("mouseup", empezarDibujo);
+document.addEventListener("mousemove", dibujar);
+boton.addEventListener("click", botonAction);
+
+//BOTON
 
 /*switch(evento.keyCode){
 
