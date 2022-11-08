@@ -10,7 +10,7 @@ let papel = canva.getContext("2d");
 let x;
 let y;
 let xinicial = 0;
-let colorsito = "yellow";
+let colorsito = "black";
 let boton = document.getElementById("boton");
 
 function track(){console.log("")};
@@ -20,10 +20,10 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
     lienzo.beginPath();
     lienzo.strokeStyle = color;
 
-    lienzo.shadowColor = 'black';
+    lienzo.shadowColor = '#05b5b3';
     lienzo.shadowBlur    = 2;
-    lienzo.shadowOffsetX = 2;
-    lienzo.shadowOffsetY = 2;
+    lienzo.shadowOffsetX = -2;
+    lienzo.shadowOffsetY = -2;
     lienzo.lineWidth     = 30;//20
     lienzo.moveTo(xinicial, yinicial);
     lienzo.lineTo(xfinal, yfinal);
