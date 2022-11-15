@@ -55,6 +55,9 @@ function dibujar(evento){
         dibujarLinea(colorsito, x,y, x+1,y+y, papel);
         console.log(x,y);
     };
+    if(x > 600){
+        lienzo.shadowOffsetX = 30;
+    }
 
 };
 
