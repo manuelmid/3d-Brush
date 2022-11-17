@@ -30,6 +30,7 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
     lienzo.stroke();
     lienzo.closePath();
 
+    console.log("shaddow x: " + lienzo.shadowOffsetX);
 }
 
 function empezarDibujo(evento){
@@ -43,6 +44,11 @@ function empezarDibujo(evento){
         console.log("ff")
     }else{console.log("jk")}
 
+    //cambiar la forma de la sombra cuando el mauso pasa de la mitad
+    if( lienzo.shadowOffsetX > 300 ){
+        lienzo.shadowOffsetX = 20;
+    }
+
 }
 
 function dibujar(evento){
@@ -53,12 +59,9 @@ function dibujar(evento){
     
     if(dibujar == true){
         dibujarLinea(colorsito, x,y, x+1,y+y, papel);
-        console.log(x,y);
+        //console.log(x,y);
     };
-    if(x > 600){
-        lienzo.shadowOffsetX = 30;
-    }
-
+    
 };
 
 function moving(){
